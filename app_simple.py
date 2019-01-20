@@ -10,13 +10,13 @@ class SimpleAndroidUITests(unittest.TestCase):
             'platformName': 'Android',
             'deviceName': 'Android Emulator',
             'automationName': 'UIAutomator2',
-            # 'app': '/root/tmp/sample_apk_debug.apk',
-            'app': '/Users/tadashi0713/tadashi0713/azure-pipeline-appium/apks/sample_apk_debug.apk',
+            'app': '/root/tmp/apks/sample_apk_debug.apk',
+            # 'app': '/Users/tadashi0713/tadashi0713/azure-pipeline-appium/apks/sample_apk_debug.apk',
             'browserName': 'android',
-            'avd': 'Nexus_5X_API_28'
+            'avd': 'nexus_5_7.1.1'
         }
-        # self.driver = webdriver.Remote('http://127.0.0.1:4444/wd/hub', desired_caps)
-        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+        self.driver = webdriver.Remote('http://127.0.0.1:4444/wd/hub', desired_caps)
+        # self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
     def tearDown(self):
         self.driver.quit()
