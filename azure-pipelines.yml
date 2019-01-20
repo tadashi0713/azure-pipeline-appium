@@ -16,16 +16,12 @@ steps:
     architecture: 'x64'
 
 - script: |
-    python -m pip install pipenv
-    pipenv install
-  displayName: 'Install prerequisites'
-
-- script: |
     docker-compose up -d
     sleep 60
   displayName: 'Set up Docker-Android'
 
 - script: |
-    pipenv shell
-    python app_simple.py
+    python -m pip install pipenv
+    pipenv install
+    pipenv run python app_simple.py
   displayName: 'Run tests'
