@@ -19,3 +19,7 @@ steps:
     python -m pip install pipenv
     pipenv install
   displayName: 'Install prerequisites'
+
+- script: |
+    docker-compose up -d
+  displayName: 'Set up Docker-Android'
